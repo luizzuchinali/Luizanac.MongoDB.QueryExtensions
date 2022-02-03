@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A0393AED-45F1-4AE6-AE13-4EEA815FC5C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Luizanac.MongoDB.QueryExtensions", "src\Luizanac.MongoDB.QueryExtensions\Luizanac.MongoDB.QueryExtensions.csproj", "{CDB74D35-F042-487F-B926-BD004BB8A475}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Luizanac.MongoDB.QueryExtensions.Abstractions", "src\Luizanac.MongoDB.QueryExtensions.Abstractions\Luizanac.MongoDB.QueryExtensions.Abstractions.csproj", "{BEB02D50-E400-4B6A-80BD-4BD67D7CCF60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Luizanac.MongoDB.QueryExtensions.App", "src\Luizanac.MongoDB.QueryExtensions.App\Luizanac.MongoDB.QueryExtensions.App.csproj", "{8F701FF5-AA21-40E4-B805-F18C5D3211CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDB74D35-F042-487F-B926-BD004BB8A475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDB74D35-F042-487F-B926-BD004BB8A475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDB74D35-F042-487F-B926-BD004BB8A475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDB74D35-F042-487F-B926-BD004BB8A475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEB02D50-E400-4B6A-80BD-4BD67D7CCF60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB02D50-E400-4B6A-80BD-4BD67D7CCF60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB02D50-E400-4B6A-80BD-4BD67D7CCF60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB02D50-E400-4B6A-80BD-4BD67D7CCF60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F701FF5-AA21-40E4-B805-F18C5D3211CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F701FF5-AA21-40E4-B805-F18C5D3211CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F701FF5-AA21-40E4-B805-F18C5D3211CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F701FF5-AA21-40E4-B805-F18C5D3211CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CDB74D35-F042-487F-B926-BD004BB8A475} = {A0393AED-45F1-4AE6-AE13-4EEA815FC5C1}
+		{BEB02D50-E400-4B6A-80BD-4BD67D7CCF60} = {A0393AED-45F1-4AE6-AE13-4EEA815FC5C1}
+		{8F701FF5-AA21-40E4-B805-F18C5D3211CF} = {A0393AED-45F1-4AE6-AE13-4EEA815FC5C1}
+	EndGlobalSection
+EndGlobal
