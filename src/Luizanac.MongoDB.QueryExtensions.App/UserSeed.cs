@@ -1,4 +1,6 @@
-﻿namespace Luizanac.MongoDB.QueryExtensions.App;
+﻿
+
+namespace Luizanac.MongoDB.QueryExtensions.App;
 
 public static class UserSeed
 {
