@@ -1,4 +1,4 @@
-﻿namespace Luizanac.MongoDB.QueryExtensions.Models;
+﻿namespace Luizanac.MongoDB.QueryExtensions.Filter;
 
 public class Term
 {
@@ -28,6 +28,7 @@ public class Term
 			"<=",
 			">",
 			"<",
+			"$="
 	};
 
 	public string[] Names { get; }
@@ -51,6 +52,7 @@ public class Term
 					"!@=" => EFilterOperator.NotContains,
 					"_=" => EFilterOperator.StartsWith,
 					"!_=" => EFilterOperator.NotStartsWith,
+					"$=" => EFilterOperator.Regex,
 					_ => EFilterOperator.Equals
 			};
 }

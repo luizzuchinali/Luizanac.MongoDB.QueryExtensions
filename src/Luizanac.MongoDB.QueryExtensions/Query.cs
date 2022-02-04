@@ -6,7 +6,7 @@ public class Query<T> where T : class
 	public FindOptions<T> Options { get; }
 	public ECaseType CaseType { get; }
 
-	private readonly IList<FilterDefinition<T>> _filterDefinitions;
+	private IEnumerable<FilterDefinition<T>> _filterDefinitions;
 
 	private FilterDefinitionBuilder<T> _filterBuilder;
 	protected FilterDefinitionBuilder<T> FilterBuilder => _filterBuilder ??= new FilterDefinitionBuilder<T>();
@@ -18,7 +18,6 @@ public class Query<T> where T : class
 	{
 		Collection = collection;
 		CaseType = caseType;
-		_filterDefinitions = new List<FilterDefinition<T>>();
 		Options = new()
 		{
 				Limit = 10
@@ -32,7 +31,7 @@ public class Query<T> where T : class
 	}
 
 	public FilterDefinition<T> GetFilterDefinition() =>
-			_filterDefinitions.Count > 0 ? new FilterDefinitionBuilder<T>().And(_filterDefinitions) : FilterDefinition<T>.Empty;
+			_filterDefinitions.Any() ? new FilterDefinitionBuilder<T>().And(_filterDefinitions) : FilterDefinition<T>.Empty;
 
 	/// <summary>
 	/// Add sort capability to <see cref="Query{T}"/> instance
@@ -45,6 +44,17 @@ public class Query<T> where T : class
 
 		var parser = new SortParser<T>(sort, SortBuilder, CaseType);
 		Options.Sort = SortBuilder.Combine(parser.GetSortDefinitions());
+		return this;
+	}
+
+	public Query<T> Filter(string filters)
+	{
+		if (string.IsNullOrEmpty(filters) || string.IsNullOrWhiteSpace(filters)) return this;
+
+		var parser = new FilterParser<T>(filters, FilterBuilder, CaseType);
+		_filterDefinitions = parser.GetFilterDefinitions();
+
+		WriteLine(filters);
 		return this;
 	}
 }

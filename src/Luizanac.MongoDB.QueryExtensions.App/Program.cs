@@ -1,5 +1,7 @@
-﻿var client = new MongoClient("mongodb://root:root@localhost:27017/");
-var collection = client.GetDatabase("luizanac-query-extensions").GetCollection<User>("Category");
+﻿using Luizanac.MongoDB.QueryExtensions.Extensions;
+
+var client = new MongoClient("mongodb://root:root@localhost:27017/");
+var collection = client.GetDatabase("luizanac-query-extensions").GetCollection<User>("Users");
 
 var serializerOptions = new JsonSerializerOptions
 {
@@ -10,7 +12,7 @@ var serializerOptions = new JsonSerializerOptions
 
 if (collection.CountDocuments(FilterDefinition<User>.Empty) == 0)
 	collection.Seed();
-
+var watcher = new Stopwatch();
 //api/clients?sort=asc,name&filter=name@=lui,email!@=@gmail.com,age!=20,age>19"
 
 //?sort=asc,name&filters=age>=16,name@=leffler,name_=h
@@ -18,18 +20,17 @@ if (collection.CountDocuments(FilterDefinition<User>.Empty) == 0)
 // >, <, >=, <=, ==, !=  Comparison operators
 // @= Contains / !@= NotContains = generate Like/ILike %value%
 // _= StartsWith / !_= NotStartsWith = generate Like/ILike value%
+//var filters = "age>=18,email@=hotmail.com|gmail.com,name|email_=l,address.city_=lake,address.number==199";
+const string filters = "name_=aaron,address.city==Hillsstad";
 
 //SORT
 //?sort=adress.number,asc will orderBy address.number ascending
 //?sort=address.number,asc|name,asc will orderBy address.number ascending then by name ascending
-// | is the sort's separator
-var sort = "address.number,asc|name,asc";
-//var filters = "age>=16,email@=hotmail.com|gmail.com,name|email_=l,address.city_=lake,address.number==199";
-
-var watcher = new Stopwatch();
+// | is "then by"
+const string sort = "name,asc";
 watcher.Start();
 
-var data = await collection.Query().OrderBy(sort).ToListAsync();
+var data = await collection.Query().Filter(filters).OrderBy(sort).ToListAsync();
 
 watcher.Stop();
 WriteLine(JsonSerializer.Serialize(data, serializerOptions));

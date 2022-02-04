@@ -9,5 +9,5 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
     volumes:
-      - ../../mongo-volume/etc:/etc/mongo
-      - ../../mongo-volume/data:/data/db
+      - ../../../mongo-volume/etc:/etc/mongo
+      - ../../../mongo-volume/data:/data/db

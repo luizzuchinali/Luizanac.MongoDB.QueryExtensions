@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Luizanac.MongoDB.QueryExtensions;
+﻿namespace Luizanac.MongoDB.QueryExtensions.Extensions;
 
 public static class ExpressionExtensions
 {

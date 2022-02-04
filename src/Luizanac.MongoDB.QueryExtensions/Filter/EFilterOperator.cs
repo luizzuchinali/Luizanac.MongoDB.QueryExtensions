@@ -1,4 +1,4 @@
-﻿namespace Luizanac.MongoDB.QueryExtensions.Models;
+﻿namespace Luizanac.MongoDB.QueryExtensions.Filter;
 
 public enum EFilterOperator
 {
@@ -12,4 +12,5 @@ public enum EFilterOperator
 	NotContains,
 	StartsWith,
 	NotStartsWith,
+	Regex
 }
