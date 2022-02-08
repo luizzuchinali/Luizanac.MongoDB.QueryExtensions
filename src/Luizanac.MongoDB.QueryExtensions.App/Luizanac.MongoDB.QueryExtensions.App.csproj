@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Luizanac.MongoDB.QueryExtensions.Abstractions\Luizanac.MongoDB.QueryExtensions.Abstractions.csproj" />
+    <ProjectReference Include="..\Luizanac.MongoDB.QueryExtensions.Shared\Luizanac.MongoDB.QueryExtensions.Shared.csproj" />
     <ProjectReference Include="..\Luizanac.MongoDB.QueryExtensions\Luizanac.MongoDB.QueryExtensions.csproj" />
   </ItemGroup>
 

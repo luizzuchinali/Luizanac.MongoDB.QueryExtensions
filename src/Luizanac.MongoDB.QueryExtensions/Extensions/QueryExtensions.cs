@@ -40,7 +40,7 @@ public static class QueryExtensions
 	/// <typeparam name="T">Your entity type</typeparam>
 	/// <returns>The fetched data</returns>
 	/// <exception cref="ArgumentNullException"></exception>
-	public static async Task<IEnumerable<T>> ToListAsync<T>(this Query<T> query)
+	public static async Task<IList<T>> ToListAsync<T>(this Query<T> query)
 			where T : class
 	{
 		_ = query ?? throw new ArgumentNullException(nameof(query), "query can't be null");
@@ -53,7 +53,7 @@ public static class QueryExtensions
 	/// <param name="cursor"><see cref="IAsyncCursor{TDocument}"/></param>
 	/// <typeparam name="T">Your entity type</typeparam>
 	/// <returns>The fetched data</returns>
-	public static async Task<IEnumerable<T>> ToListAsync<T>(this Task<IAsyncCursor<T>> cursor) =>
+	public static async Task<IList<T>> ToListAsync<T>(this Task<IAsyncCursor<T>> cursor) =>
 			await (await cursor).ToListAsync();
 
 	/// <summary>
@@ -64,7 +64,7 @@ public static class QueryExtensions
 	/// <param name="size">Number of data to get</param>
 	/// <typeparam name="T">Type of the data</typeparam>
 	/// <returns></returns>
-	public static async Task<IPagination<IEnumerable<T>>> PaginateAsync<T>(this Query<T> query, int page, int size)
+	public static async Task<IPagination<IList<T>>> PaginateAsync<T>(this Query<T> query, int page, int size)
 			where T : class
 	{
 		page = page <= 0 ? 1 : page;

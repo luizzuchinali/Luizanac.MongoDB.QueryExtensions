@@ -18,10 +18,7 @@ public class Query<T> where T : class
 	{
 		Collection = collection;
 		CaseType = caseType;
-		Options = new()
-		{
-				Limit = 10
-		};
+		Options = new FindOptions<T>();
 	}
 
 	public Query(IMongoCollection<T> collection, FindOptions<T> options, ECaseType caseType = ECaseType.PascalCase)
@@ -31,7 +28,7 @@ public class Query<T> where T : class
 	}
 
 	public FilterDefinition<T> GetFilterDefinition() =>
-			_filterDefinitions.Any() ? new FilterDefinitionBuilder<T>().And(_filterDefinitions) : FilterDefinition<T>.Empty;
+			_filterDefinitions is not null ? new FilterDefinitionBuilder<T>().And(_filterDefinitions) : FilterDefinition<T>.Empty;
 
 	/// <summary>
 	/// Add sort capability to <see cref="Query{T}"/> instance

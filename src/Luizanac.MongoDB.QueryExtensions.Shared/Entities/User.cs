@@ -1,4 +1,4 @@
-﻿namespace Luizanac.MongoDB.QueryExtensions.App.Entities;
+﻿namespace Luizanac.MongoDB.QueryExtensions.Shared.Entities;
 
 public class User : Entity
 {

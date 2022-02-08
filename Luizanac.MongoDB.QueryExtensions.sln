@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Luizanac.MongoDB.QueryExten
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Luizanac.MongoDB.QueryExtensions.App", "src\Luizanac.MongoDB.QueryExtensions.App\Luizanac.MongoDB.QueryExtensions.App.csproj", "{8F701FF5-AA21-40E4-B805-F18C5D3211CF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0CB8C747-289C-41AA-90E7-D911AE945DAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Luizanac.MongoDB.QueryExtensions.Tests", "tests\Luizanac.MongoDB.QueryExtensions.Tests\Luizanac.MongoDB.QueryExtensions.Tests.csproj", "{F3F544E3-E821-43F5-8A73-2A5111804195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Luizanac.MongoDB.QueryExtensions.Shared", "src\Luizanac.MongoDB.QueryExtensions.Shared\Luizanac.MongoDB.QueryExtensions.Shared.csproj", "{17827012-A697-42FB-9285-2ABD76BDF08D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,10 +38,20 @@ Global
 		{8F701FF5-AA21-40E4-B805-F18C5D3211CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F701FF5-AA21-40E4-B805-F18C5D3211CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F701FF5-AA21-40E4-B805-F18C5D3211CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3F544E3-E821-43F5-8A73-2A5111804195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3F544E3-E821-43F5-8A73-2A5111804195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3F544E3-E821-43F5-8A73-2A5111804195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3F544E3-E821-43F5-8A73-2A5111804195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17827012-A697-42FB-9285-2ABD76BDF08D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17827012-A697-42FB-9285-2ABD76BDF08D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17827012-A697-42FB-9285-2ABD76BDF08D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17827012-A697-42FB-9285-2ABD76BDF08D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CDB74D35-F042-487F-B926-BD004BB8A475} = {A0393AED-45F1-4AE6-AE13-4EEA815FC5C1}
 		{BEB02D50-E400-4B6A-80BD-4BD67D7CCF60} = {A0393AED-45F1-4AE6-AE13-4EEA815FC5C1}
 		{8F701FF5-AA21-40E4-B805-F18C5D3211CF} = {A0393AED-45F1-4AE6-AE13-4EEA815FC5C1}
+		{F3F544E3-E821-43F5-8A73-2A5111804195} = {0CB8C747-289C-41AA-90E7-D911AE945DAA}
+		{17827012-A697-42FB-9285-2ABD76BDF08D} = {A0393AED-45F1-4AE6-AE13-4EEA815FC5C1}
 	EndGlobalSection
 EndGlobal
